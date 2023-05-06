@@ -1,9 +1,7 @@
 package com.example.myapplication;
 
-import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -85,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             buttonChoice3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (buttonChoice2.getText() == correctChoice) {
+                    if (buttonChoice3.getText() == correctChoice) {
                         scoreCount++;
                         incrementScore(scoreCount);
                         continueQuestion();
