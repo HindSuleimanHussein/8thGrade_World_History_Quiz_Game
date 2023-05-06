@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="start">Start</string>
+    <string name="you_must_answer_5_world_history_question_to_start_press_the_start_button">You Must Answer 5 World
+        History Questions, to Start: Press the \'Start\' Button
+    </string>
+    <string name="score">Score:</string>
+    <string name="Scoring">Score:</string>
+</resources>
