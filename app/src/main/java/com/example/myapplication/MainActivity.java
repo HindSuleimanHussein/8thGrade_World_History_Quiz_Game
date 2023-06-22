@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,12 +18,13 @@ public class MainActivity extends AppCompatActivity {
      Button buttonChoice1;
      Button buttonChoice2;
      Button buttonChoice3;
-     Button startButton;
+     Button startButton, recyclerButton;
      int scoreCount=0, questionCount=0;
      String correctChoice;
      int amountQuestions = historyQuestions.questions.length;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         buttonChoice2 = findViewById(R.id.button3);
         buttonChoice3 = findViewById(R.id.button4);
         startButton = findViewById(R.id.button);
+        recyclerButton=findViewById(R.id.buttonRecycler);
         scoreView = findViewById(R.id.scoreView);
 
         startButton.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 buttonChoice3.setVisibility(View.VISIBLE);
                 scoreView.setVisibility(View.VISIBLE);
                 startButton.setVisibility(View.INVISIBLE);
+                recyclerButton.setVisibility(View.INVISIBLE);
                 continueQuestion();
 
 
@@ -95,8 +100,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+        recyclerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity2();
+            }
+        });
+
 
         }
+
+    public void openActivity2(){
+        Intent intent = new Intent(this, MainActivity3.class);
+        startActivity(intent);
+
+    }
 
     private void continueQuestion(){
         if (questionCount == amountQuestions) {
