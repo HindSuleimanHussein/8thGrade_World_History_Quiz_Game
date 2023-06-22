@@ -26,8 +26,8 @@ public class MainActivity2  extends AppCompatActivity {
             txt = findViewById(R.id.txt);
             img = findViewById(R.id.img);
 
-            txt.setAnimation(right);
-            img.setAnimation(left);
+            txt.setAnimation(left);
+            img.setAnimation(right);
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
